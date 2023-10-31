@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.educationstorage.EducationStorageController">
+   <children>
+      <MenuBar fx:id="menuBar" layoutY="-1.0" prefHeight="44.0" prefWidth="1250.0" style="-fx-background-color: #109ab2;">
+        <menus>
+            <Menu fx:id="yearOneMenu" mnemonicParsing="false" text="Year 1">
+               <items>
+                  <MenuItem fx:id="editGrades1Item" mnemonicParsing="false" onAction="#openYearOne" text="Edit Grades" />
+               </items>
+            </Menu>
+            <Menu fx:id="yearTwoMenu" mnemonicParsing="false" text="Year 2">
+               <items>
+                  <MenuItem fx:id="editGrades2Item" mnemonicParsing="false" onAction="#openYearTwo" text="Edit Grades" />
+               </items>
+            </Menu>
+            <Menu fx:id="yearThreeMenu" mnemonicParsing="false" text="Year 3">
+               <items>
+                  <MenuItem fx:id="editGrades3Item" mnemonicParsing="false" onAction="#openYearThree" text="Edit Grades" />
+               </items>
+            </Menu>
+            <Menu fx:id="yearFourMenu" mnemonicParsing="false" text="Year 4">
+               <items>
+                  <MenuItem fx:id="editGrades4" mnemonicParsing="false" onAction="#openYearFour" text="Edit Grades" />
+               </items>
+            </Menu>
+            <Menu fx:id="gpaCalculatorMenu" mnemonicParsing="false" text="GPA Calculator">
+               <items>
+                  <MenuItem fx:id="calculateItem" mnemonicParsing="false" onAction="#openGpaCalculator" text="Calculate" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Rectangle height="908.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1250.0">
+         <fill>
+            <RadialGradient focusDistance="-0.2298850574712643" radius="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.14846947127189392">
+                     <color>
+                        <Color red="0.23529411852359772" green="0.23529411852359772" blue="0.250980406999588" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.007843137718737125" green="0.0117647061124444" blue="0.06666667014360428" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="100.0" arcWidth="100.0" height="855.0" layoutX="25.0" layoutY="69.0" opacity="0.35" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1200.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5411764979362488" green="0.7176470756530762" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.35316745784907505">
+                     <color>
+                        <Color red="0.47843137383461" green="0.6666666865348816" blue="0.9725490212440491" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label alignment="CENTER" layoutX="376.0" layoutY="103.0" prefHeight="71.0" prefWidth="499.0" text="Education Storage" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Black" size="49.0" />
+         </font>
+         <effect>
+            <DropShadow height="30.52" radius="15.309999999999999" spread="0.61" width="32.72">
+               <color>
+                  <Color red="0.006761695723980665" green="0.03076571598649025" blue="0.4868420958518982" />
+               </color>
+               <input>
+                  <Blend mode="BLUE" />
+               </input>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutX="1058.0" layoutY="928.0" text="Created By Brendan Gorchinsky" textFill="#515151" />
+      <Label layoutX="48.0" layoutY="270.0" text="- The above &quot;Year&quot; tabs open up locations to input your courses along with the corresponding grades and weights." textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semilight" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="305.0" text=" - If you are inputting a full year course (1.0 weight), enter it into term 2." textFill="#d0d0d0">
+         <font>
+            <Font name="Segoe UI Semilight" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="355.0" text="- Do not input a course's name as one that you have already used." textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semilight" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="405.0" text="- Open the &quot;GPA Calculator&quot; Tab to view your cumulative averages as well as calculate specific averages." textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semilight" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="440.0" text="- Years or terms with no saved courses will display as &quot;TBA&quot;." textFill="#d0d0d0">
+         <font>
+            <Font name="Segoe UI Semilight" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="469.0" text="- The &quot;Calculate&quot; section uses all courses from the selected years to calculate averages (including summer courses)." textFill="#d0d0d0">
+         <font>
+            <Font name="Segoe UI Semilight" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="519.0" text="- Add summer classes to whichever year you please." textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semilight" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="554.0" text="- Note: when calculating averages, whichever year you added summer courses too, they will be included in that year's averages. " textFill="#d0d0d0">
+         <font>
+            <Font name="Segoe UI Semilight" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="583.0" prefHeight="54.0" prefWidth="1098.0" text="- Ex. If you take a 2000 level course in the summer after first year, adding it to first year's summer will count it towards your first year averages. Adding it to second year's summer would count the 2000 level course towards your second year averages." textFill="#d0d0d0" wrapText="true">
+         <font>
+            <Font name="Segoe UI Semilight" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

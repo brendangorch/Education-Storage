@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="950.0" prefWidth="800.0" style="-fx-background-color: navy;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.educationstorage.GpaCalculatorController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="950.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.16824644549763035" focusAngle="-90.0" focusDistance="1.0" radius="0.6724137931034482">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.16463414634146342">
+                     <color>
+                        <Color red="0.27450981736183167" green="0.27450981736183167" blue="0.27450981736183167" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.10980392247438431" blue="0.13333334028720856" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <AnchorPane fx:id="bottomAnchorPane" layoutY="600.0" prefHeight="350.0" prefWidth="800.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="325.0" layoutX="17.0" layoutY="9.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 25; -fx-arc-width: 25;" width="766.0">
+               <fill>
+                  <LinearGradient endX="0.018957345971563982" endY="0.8578199052132702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5411764979362488" green="0.7176470756530762" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.16463414634146342">
+                           <color>
+                              <Color red="0.47843137383461" green="0.6666666865348816" blue="0.9725490212440491" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Label alignment="CENTER" layoutX="327.0" layoutY="14.0" text="Calculate" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="34.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="245.0" layoutX="449.0" layoutY="62.0" opacity="0.36" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 25; -fx-arc-width: 25;" width="286.0">
+               <fill>
+                  <LinearGradient endX="0.018957345971563982" endY="0.8578199052132702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5416666865348816" green="0.7173610925674438" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <RadioButton fx:id="yearOneRadioBtn" layoutX="50.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#enableCalculate" prefHeight="35.0" prefWidth="145.0" text="Year One" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="yearTwoRadioBtn" layoutX="50.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#enableCalculate" prefHeight="35.0" prefWidth="145.0" text="Year Two" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="yearThreeRadioBtn" layoutX="50.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#enableCalculate" prefHeight="35.0" prefWidth="145.0" text="Year Three" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="yearFourRadioBtn" layoutX="50.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#enableCalculate" prefHeight="35.0" prefWidth="145.0" text="Year Four" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="20.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="calculateBtn" layoutX="469.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#onCalculateClick" prefHeight="42.0" prefWidth="104.0" style="-fx-background-color: #4aa9c9;" text="Calculate" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="resetBtn" layoutX="612.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="42.0" prefWidth="104.0" style="-fx-background-color: #4aa9c9;" text="Reset" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="28.0" layoutY="9.0" prefHeight="66.0" prefWidth="210.0" text="Select years to calculate cumulative GPA:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semilight" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="calculatedGpaLbl" alignment="CENTER" layoutX="499.0" layoutY="128.0" prefHeight="66.0" prefWidth="186.0" text="N/A" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="62.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.06" radius="14.0925" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.083576999604702" green="0.1500406116247177" blue="0.3684210479259491" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="calculatedLetterLbl" alignment="CENTER" layoutX="460.0" layoutY="68.0" prefHeight="66.0" prefWidth="104.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="34.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.06" radius="14.0925" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.083576999604702" green="0.1500406116247177" blue="0.3684210479259491" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="calculatedScaleLbl" alignment="CENTER" layoutX="619.0" layoutY="68.0" prefHeight="66.0" prefWidth="104.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="34.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.06" radius="14.0925" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.083576999604702" green="0.1500406116247177" blue="0.3684210479259491" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <CheckBox fx:id="selectAllBtn" layoutX="147.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#selectAll" text="Select All" textFill="#a1a1a1">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <Label fx:id="noDataOneLbl" layoutX="205.0" layoutY="92.0" prefHeight="17.0" prefWidth="121.0" text="No data for this year." textFill="#808080">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="noDataTwoLbl" layoutX="205.0" layoutY="142.0" prefHeight="17.0" prefWidth="121.0" text="No data for this year." textFill="#808080">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="noDataThreeLbl" layoutX="205.0" layoutY="192.0" prefHeight="17.0" prefWidth="121.0" text="No data for this year." textFill="#808080">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="noDataFourLbl" layoutX="205.0" layoutY="242.0" prefHeight="17.0" prefWidth="121.0" text="No data for this year." textFill="#808080">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topLeftAnchorPane" prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="275.0" layoutX="17.0" layoutY="17.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 25; -fx-arc-width: 25;" width="375.0">
+               <fill>
+                  <LinearGradient endX="0.018957345971563982" endY="0.8578199052132702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5416666865348816" green="0.7173610925674438" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.16463414634146342">
+                           <color>
+                              <Color red="0.47843137383461" green="0.6666666865348816" blue="0.9725490212440491" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label layoutX="128.0" layoutY="26.0" text="Year One" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="34.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <ProgressBar fx:id="progressBarOne" layoutX="276.0" layoutY="106.0" opacity="0.8" prefHeight="30.0" prefWidth="80.0" progress="0.0" rotate="-90.0">
+               <effect>
+                  <InnerShadow />
+               </effect></ProgressBar>
+            <Label fx:id="wGpaLblOne" alignment="CENTER" layoutX="108.0" layoutY="88.0" prefHeight="66.0" prefWidth="186.0" text="98%" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="44.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.06" radius="14.0925" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.083576999604702" green="0.1500406116247177" blue="0.3684210479259491" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="38.0" layoutY="81.0" text="wGPA:" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <Label fx:id="exclSummerLblOne" layoutX="26.0" layoutY="260.0" prefHeight="20.0" prefWidth="210.0" text="GPA excl. Summer Term:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font></Label>
+            <Label fx:id="firstTermLblOne" layoutX="26.0" layoutY="185.0" prefHeight="20.0" prefWidth="186.0" text="First Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="secondTermLblOne" layoutX="26.0" layoutY="210.0" prefHeight="20.0" prefWidth="186.0" text="Second Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font></Label>
+            <Label fx:id="summerTermLblOne" layoutX="26.0" layoutY="235.0" prefHeight="20.0" prefWidth="186.0" text="Summer Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font></Label>
+            <Label fx:id="highestLblOne" layoutX="240.0" layoutY="185.0" prefHeight="20.0" prefWidth="147.0" text="Highest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font></Label>
+            <Label fx:id="lowestLblOne" layoutX="240.0" layoutY="210.0" prefHeight="20.0" prefWidth="147.0" text="Lowest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font></Label>
+            <Separator layoutX="18.0" layoutY="68.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Separator layoutX="18.0" layoutY="172.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Button fx:id="yearOneChangeBtn" layoutX="240.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onYearOneBtnClick" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #4aa9c9;" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font></Button>
+            <Label fx:id="wGpaLetterOne" layoutX="48.0" layoutY="116.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="wGpaScaleOne" layoutX="72.0" layoutY="143.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="totalCredLblOne" layoutX="240.0" layoutY="235.0" prefHeight="20.0" prefWidth="147.0" text="Total Credits:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topRightAnchorPane" layoutX="400.0" prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="275.0" layoutX="9.0" layoutY="17.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 25; -fx-arc-width: 25;" width="375.0">
+               <fill>
+                  <LinearGradient endX="0.018957345971563982" endY="0.8578199052132702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5416666865348816" green="0.7173610925674438" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.16463414634146342">
+                           <color>
+                              <Color red="0.47843137383461" green="0.6666666865348816" blue="0.9725490212440491" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label layoutX="119.0" layoutY="26.0" text="Year Two" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="34.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <Label fx:id="wGpaLblTwo" alignment="CENTER" layoutX="100.0" layoutY="88.0" prefHeight="66.0" prefWidth="186.0" text="98%" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="44.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.19" radius="14.125" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="30.0" layoutY="81.0" text="wGPA:" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <ProgressBar fx:id="progressBarTwo" layoutX="268.0" layoutY="106.0" opacity="0.8" prefHeight="30.0" prefWidth="80.0" progress="0.0" rotate="-90.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ProgressBar>
+            <Separator layoutX="10.0" layoutY="68.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Separator layoutX="10.0" layoutY="172.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Label fx:id="exclSummerLblTwo" layoutX="18.0" layoutY="260.0" prefHeight="20.0" prefWidth="210.0" text="GPA excl. Summer Term:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstTermLblTwo" layoutX="18.0" layoutY="185.0" prefHeight="20.0" prefWidth="186.0" text="First Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="secondTermLblTwo" layoutX="18.0" layoutY="210.0" prefHeight="20.0" prefWidth="186.0" text="Second Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="summerTermLblTwo" layoutX="18.0" layoutY="235.0" prefHeight="20.0" prefWidth="186.0" text="Summer Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="highestLblTwo" layoutX="232.0" layoutY="185.0" prefHeight="20.0" prefWidth="147.0" text="Highest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lowestLblTwo" layoutX="232.0" layoutY="210.0" prefHeight="20.0" prefWidth="147.0" text="Lowest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="yearTwoChangeBtn" layoutX="232.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onYearTwoBtnClick" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: #4aa9c9;" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font></Button>
+            <Label fx:id="wGpaLetterTwo" layoutX="40.0" layoutY="116.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="wGpaScaleTwo" layoutX="64.0" layoutY="143.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="totalCredLblTwo" layoutX="232.0" layoutY="235.0" prefHeight="20.0" prefWidth="147.0" text="Total Credits:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="middleLeftAnchorPane" layoutY="300.0" prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="275.0" layoutX="17.0" layoutY="17.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 25; -fx-arc-width: 25;" width="375.0">
+               <fill>
+                  <LinearGradient endX="0.018957345971563982" endY="0.8578199052132702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5416666865348816" green="0.7173610925674438" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.16463414634146342">
+                           <color>
+                              <Color red="0.47843137383461" green="0.6666666865348816" blue="0.9725490212440491" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Label layoutX="115.0" layoutY="26.0" text="Year Three" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="34.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect></Label>
+            <Label fx:id="wGpaLblThree" alignment="CENTER" layoutX="108.0" layoutY="88.0" prefHeight="66.0" prefWidth="186.0" text="98%" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="44.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.06" radius="14.0925" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.083576999604702" green="0.1500406116247177" blue="0.3684210479259491" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="38.0" layoutY="81.0" text="wGPA:" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <ProgressBar fx:id="progressBarThree" layoutX="276.0" layoutY="106.0" opacity="0.8" prefHeight="30.0" prefWidth="80.0" progress="0.0" rotate="-90.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ProgressBar>
+            <Separator layoutX="18.0" layoutY="172.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Separator layoutX="18.0" layoutY="68.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Label fx:id="exclSummerLblThree" layoutX="26.0" layoutY="260.0" prefHeight="20.0" prefWidth="210.0" text="GPA excl. Summer Term:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstTermLblThree" layoutX="26.0" layoutY="185.0" prefHeight="20.0" prefWidth="186.0" text="First Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="secondTermLblThree" layoutX="26.0" layoutY="210.0" prefHeight="20.0" prefWidth="186.0" text="Second Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="summerTermLblThree" layoutX="26.0" layoutY="235.0" prefHeight="20.0" prefWidth="186.0" text="Summer Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="highestLblThree" layoutX="240.0" layoutY="185.0" prefHeight="20.0" prefWidth="147.0" text="Highest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lowestLblThree" layoutX="240.0" layoutY="210.0" prefHeight="20.0" prefWidth="147.0" text="Lowest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="yearThreeChangeBtn" layoutX="240.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onYearThreeBtnClick" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: #4aa9c9;" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font></Button>
+            <Label fx:id="wGpaLetterThree" layoutX="48.0" layoutY="116.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="wGpaScaleThree" layoutX="72.0" layoutY="143.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="totalCredLblThree" layoutX="240.0" layoutY="235.0" prefHeight="20.0" prefWidth="147.0" text="Total Credits:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="middleRightAnchorPane" layoutX="400.0" layoutY="300.0" prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="275.0" layoutX="9.0" layoutY="17.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 25; -fx-arc-width: 25;" width="375.0">
+               <fill>
+                  <LinearGradient endX="0.018957345971563982" endY="0.8578199052132702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5416666865348816" green="0.7173610925674438" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.16463414634146342">
+                           <color>
+                              <Color red="0.47843137383461" green="0.6666666865348816" blue="0.9725490212440491" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.21960784494876862" blue="0.5254902243614197" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label layoutX="117.0" layoutY="26.0" text="Year Four" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="34.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect></Label>
+            <Label fx:id="wGpaLblFour" alignment="CENTER" layoutX="100.0" layoutY="88.0" prefHeight="66.0" prefWidth="186.0" text="98%" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="44.0" />
+               </font>
+               <effect>
+                  <DropShadow height="29.06" radius="14.0925" spread="0.36" width="29.31">
+                     <color>
+                        <Color red="0.083576999604702" green="0.1500406116247177" blue="0.3684210479259491" />
+                     </color>
+                     <input>
+                        <Blend mode="BLUE" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="30.0" layoutY="81.0" text="wGPA:" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Blend mode="BLUE" />
+               </effect>
+            </Label>
+            <ProgressBar fx:id="progressBarFour" layoutX="268.0" layoutY="106.0" opacity="0.8" prefHeight="30.0" prefWidth="80.0" progress="0.0" rotate="-90.0">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ProgressBar>
+            <Separator layoutX="10.0" layoutY="68.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Separator layoutX="10.0" layoutY="172.0" prefWidth="374.0" style="-fx-background-color: #00b7ff;" />
+            <Label fx:id="exclSummerLblFour" layoutX="18.0" layoutY="260.0" prefHeight="20.0" prefWidth="210.0" text="GPA excl. Summer Term:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstTermLblFour" layoutX="18.0" layoutY="185.0" prefHeight="20.0" prefWidth="186.0" text="First Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="secondTermLblFour" layoutX="18.0" layoutY="210.0" prefHeight="20.0" prefWidth="186.0" text="Second Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="summerTermLblFour" layoutX="18.0" layoutY="235.0" prefHeight="20.0" prefWidth="186.0" text="Summer Term GPA:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="highestLblFour" layoutX="232.0" layoutY="185.0" prefHeight="20.0" prefWidth="147.0" text="Highest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lowestLblFour" layoutX="232.0" layoutY="210.0" prefHeight="20.0" prefWidth="147.0" text="Lowest Grade:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="yearFourChangeBtn" layoutX="232.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onYearFourBtnClick" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: #4aa9c9;" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font></Button>
+            <Label fx:id="wGpaLetterFour" layoutX="40.0" layoutY="116.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="wGpaScaleFour" layoutX="64.0" layoutY="143.0" prefWidth="50.0" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.36">
+                     <color>
+                        <Color red="0.08235294371843338" green="0.14901961386203766" blue="0.3686274588108063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="totalCredLblFour" layoutX="232.0" layoutY="235.0" prefHeight="20.0" prefWidth="147.0" text="Total Credits:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
